@@ -11,14 +11,14 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   // check "Add to Cart" button is disabled or not
-  const [isAddToCartDisabled, setIsAddToCartDisabled] = useState(false);
+  const [addToCartDisabled, setAddToCartDisabled] = useState(false);
 
   // for product added to cart
   const handleAddToCart = (product, quantity) => {
     // Disable the "Add to Cart" button when multiple clicks
-    setIsAddToCartDisabled(true);
+    setAddToCartDisabled(true);
 
-    // Check whether the product is already in the cart or not
+    // Check whether the product is in the cart or not
     const existingProduct = cartProducts.find((p) => p.id === product.id);
 
     if (existingProduct) {
@@ -35,12 +35,12 @@ function App() {
     }
 
     setTimeout(() => {
-      setIsAddToCartDisabled(false);
+      setAddToCartDisabled(false);
     }, 1000);
   };
-  
+
     // for remove product from cart
-    const handleRemoveFromCart = (productToRemove) => {
+    const handleRemoveCart = (productToRemove) => {
       const updatedCart = cartProducts.filter(
         (product) => product.id !== productToRemove.id
       );
@@ -57,7 +57,7 @@ function App() {
               <CataloguePage
                 products={products}
                 onAddToCart={handleAddToCart}
-                isAddToCartDisabled={isAddToCartDisabled}
+                addToCartDisabled={addToCartDisabled}
               />
             }
           />
@@ -66,7 +66,7 @@ function App() {
             element={
               <CartPage
                 products={cartProducts}
-                onRemoveFromCart={handleRemoveFromCart}
+                removeCart={handleRemoveCart}
               />
             }
           />

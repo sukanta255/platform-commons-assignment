@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style/CartPage.css";
 
-const CartPage = ({ products, onRemoveFromCart }) => {
+const CartPage = ({ products, removeCart }) => {
   return (
     <div>
       <h2>Cart Page</h2>
@@ -21,7 +21,7 @@ const CartPage = ({ products, onRemoveFromCart }) => {
               <p>{product.Name}</p>
               <p>Price: ₹{product.Price}</p>
               <p>Quantity: {product.quantity}</p>
-              <button onClick={() => onRemoveFromCart(product)}>Remove</button>
+              <button onClick={() => removeCart(product)}>Remove</button>
             </div>
           ))}
         </div>
