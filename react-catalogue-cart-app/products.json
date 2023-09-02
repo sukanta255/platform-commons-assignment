@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "Name": "Product 1",
+      "Image": "image-url-1.jpg",
+      "Weight": "200g",
+      "Price": 10.99
+    },
+    {
+      "Name": "Product 2",
+      "Image": "image-url-2.jpg",
+      "Weight": "150g",
+      "Price": 8.99
+    }
+  ]
+}
